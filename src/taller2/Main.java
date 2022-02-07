@@ -7,6 +7,7 @@ public class Main {
         SpaceShip1 saturnV = new SpaceShip1();
         SpaceShip2 newHorizon = new SpaceShip2();
         SpaceShip3 apolo = new SpaceShip3();
+        SpaceShip4 arianeV = new SpaceShip4();
 
         String answer;
         Boolean option = false;
@@ -38,29 +39,41 @@ public class Main {
                     optionNumber = Integer.valueOf(answer);
                     switch (optionNumber) {
                         case 1:
-                            JOptionPane.showMessageDialog(null, "Está es la información del Saturno V");
+                            JOptionPane.showMessageDialog(null, "This is the Saturn V information");
                             JOptionPane.showMessageDialog(null, saturnV.descriptionShip());
-                            JOptionPane.showMessageDialog(null, "Vamos a cargar la nave");
+                            JOptionPane.showMessageDialog(null, "Let's load the spaceship");
                             saturnV.transportCargo();
-                            JOptionPane.showMessageDialog(null, "Vamos a despegar, ¡ahora!");
+                            JOptionPane.showMessageDialog(null, "Let's take off, now!");
                             saturnV.launchShip();
-                            JOptionPane.showMessageDialog(null, "iniciaremos la aceleración de la nave");
+                            JOptionPane.showMessageDialog(null, "we will start the acceleration of the spaceship");
                             saturnV.accelerate();
-                            JOptionPane.showMessageDialog(null, "Listo para soltar la carga");
+                            JOptionPane.showMessageDialog(null, "Ready to drop the load");
                             saturnV.dropCargo();
-                            JOptionPane.showMessageDialog(null, "Lamentablemente la nave no puede aterrizar.");
+                            JOptionPane.showMessageDialog(null, "Unfortunately, the spaceship cannot land.");
                             saturnV.landing();
                             break;
 
                         case 2:
-
+                            JOptionPane.showMessageDialog(null, "This is the Saturn V information");
+                            JOptionPane.showMessageDialog(null, arianeV.descriptionShip());
+                            JOptionPane.showMessageDialog(null, "Let's load the spaceship");
+                            arianeV.transportCargo();
+                            JOptionPane.showMessageDialog(null, "Let's take off, now!");
+                            arianeV.launchShip();
+                            JOptionPane.showMessageDialog(null, "we will start the acceleration of the spaceship");
+                            arianeV.accelerate();
+                            JOptionPane.showMessageDialog(null, "Ready to drop the load");
+                            arianeV.dropCargo();
+                            JOptionPane.showMessageDialog(null, "Unfortunately, the spaceship cannot land.");
+                            arianeV.landing();
+                            break;
 
                         default:
-                            JOptionPane.showMessageDialog(null, "Opción invalida");
+                            JOptionPane.showMessageDialog(null, "Wrong choice.");
                     }
                     do {
                         try {
-                            answer = JOptionPane.showInputDialog("¿Qué deseas hacer? \n1.Reiniciar menú. \n2.Salir del juego.");
+                            answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
                             optionNumber = Integer.valueOf(answer);
                             switch (optionNumber) {
                                 case 1:
@@ -72,11 +85,11 @@ public class Main {
                                     optionExit = false;
                                     break;
                                 default:
-                                    JOptionPane.showMessageDialog(null, "Opción erronea");
+                                    JOptionPane.showMessageDialog(null, "Wrong choice.");
                                     optionExit = true;
                             }
                         }catch (NumberFormatException e){
-                            JOptionPane.showMessageDialog(null, "Solo puedes ingresar 1 o 2");
+                            JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
                             optionExit = true;
                         }
                     }while (optionExit);
@@ -85,7 +98,7 @@ public class Main {
                 } else if (optionNumber == 2) {
                     do {
                         try {
-                            answer = JOptionPane.showInputDialog("¿Qué deseas hacer? \n1.Reiniciar menú. \n2.Salir del juego.");
+                            answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
                             optionNumber = Integer.valueOf(answer);
                             switch (optionNumber) {
                                 case 1:
@@ -97,18 +110,18 @@ public class Main {
                                     optionExit = false;
                                     break;
                                 default:
-                                    JOptionPane.showMessageDialog(null, "Opción erronea");
+                                    JOptionPane.showMessageDialog(null, "Wrong choice.");
                                     optionExit = true;
                             }
                         }catch (NumberFormatException e){
-                            JOptionPane.showMessageDialog(null, "Solo puedes ingresar 1 o 2");
+                            JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
                             optionExit = true;
                         }
                     }while (optionExit);
                 } else if (optionNumber == 3) {
                     do {
                         try {
-                            answer = JOptionPane.showInputDialog("¿Qué deseas hacer? \n1.Reiniciar menú. \n2.Salir del juego.");
+                            answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
                             optionNumber = Integer.valueOf(answer);
                             switch (optionNumber) {
                                 case 1:
@@ -120,19 +133,19 @@ public class Main {
                                     optionExit = false;
                                     break;
                                 default:
-                                    JOptionPane.showMessageDialog(null, "Opción erronea");
+                                    JOptionPane.showMessageDialog(null, "Wrong choice.");
                                     optionExit = true;
                             }
                         }catch (NumberFormatException e){
-                            JOptionPane.showMessageDialog(null, "Solo puedes ingresar 1 o 2");
+                            JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
                             optionExit = true;
                         }
                     }while (optionExit);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Opción erronea");
+                    JOptionPane.showMessageDialog(null, "Wrong choice.");
                 }
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Solo puedes ingresar 1, 2 o 3");
+                JOptionPane.showMessageDialog(null, "You can only enter 1, 2 or 3.");
             }
         }while (option);
     }
