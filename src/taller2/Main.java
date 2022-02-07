@@ -155,44 +155,7 @@ public class Main {
                             }
                         }while(optionExit);
 
-                        do {
-                            /**
-                             * Exception control, try to execute the code.
-                             */
-                            try {
-                                /**
-                                 * It asks the user a question and saves its answer as a string in the answer attribute.
-                                 */
-                                answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
-                                /**
-                                 * The answer becomes Intenger.
-                                 */
-                                optionNumber = Integer.valueOf(answer);
-                                /**
-                                 * Control flow switch, executes code based on user response.
-                                 */
-                                switch (optionNumber) {
-                                    case 1:
-                                        option = false;
-                                        optionExit = false;
-                                        break;
-                                    case 2:
-                                        option = true;
-                                        optionExit = false;
-                                        break;
-                                    default:
-                                        JOptionPane.showMessageDialog(null, "Wrong choice.");
-                                        optionExit = true;
-                                }
-                                /**
-                                 * Catches the exception and displays a message.
-                                 */
-                            }catch (NumberFormatException e){
-                                JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
-                                optionExit = true;
-                            }
-                        }while (optionExit);
-
+                        option = exit();
                     /**
                      * Control flow else if, performs a condition based on the user's response.
                      */
@@ -209,43 +172,7 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "9.5 years later we arrived at Pluto. It is a historic milestone, being one of the fastest unmanned spaceship ever built by");
                         newHorizon.landing();
 
-                        do {
-                            /**
-                             * Exception control, try to execute the code.
-                             */
-                            try {
-                                /**
-                                 * It asks the user a question and saves its answer as a string in the answer attribute.
-                                 */
-                                answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
-                                /**
-                                 * The answer becomes Intenger.
-                                 */
-                                optionNumber = Integer.valueOf(answer);
-                                /**
-                                 * Control flow switch, executes code based on user response.
-                                 */
-                                switch (optionNumber) {
-                                    case 1:
-                                        option = false;
-                                        optionExit = false;
-                                        break;
-                                    case 2:
-                                        option = true;
-                                        optionExit = false;
-                                        break;
-                                    default:
-                                        JOptionPane.showMessageDialog(null, "Wrong choice.");
-                                        optionExit = true;
-                                }
-                                /**
-                                 * Catches the exception and displays a message.
-                                 */
-                            }catch (NumberFormatException e){
-                                JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
-                                optionExit = true;
-                            }
-                        }while (optionExit);
+                        option = exit();
 
                     /**
                      * Control flow else if, performs a condition based on the user's response.
@@ -262,43 +189,7 @@ public class Main {
                         apollo.landing();
                         apollo.launchShip();
 
-                        do {
-                            /**
-                             * Exception control, try to execute the code.
-                             */
-                            try {
-                                /**
-                                 * It asks the user a question and saves its answer as a string in the answer attribute.
-                                 */
-                                answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
-                                /**
-                                 * The answer becomes Intenger.
-                                 */
-                                optionNumber = Integer.valueOf(answer);
-                                /**
-                                 * Control flow switch, executes code based on user response.
-                                 */
-                                switch (optionNumber) {
-                                    case 1:
-                                        option = false;
-                                        optionExit = false;
-                                        break;
-                                    case 2:
-                                        option = true;
-                                        optionExit = false;
-                                        break;
-                                    default:
-                                        JOptionPane.showMessageDialog(null, "Wrong choice.");
-                                        optionExit = true;
-                                }
-                                /**
-                                 * Catches the exception and displays a message.
-                                 */
-                            }catch (NumberFormatException e){
-                                JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
-                                optionExit = true;
-                            }
-                        }while (optionExit);
+                        option = exit();
 
                     } else {
                         JOptionPane.showMessageDialog(null, "Wrong choice.");
@@ -312,6 +203,55 @@ public class Main {
             }while (!option);
         }
 
+    }
+
+    /**
+     * Method that refers to the end of the game.
+     * @return a boolean.
+     */
+    public static boolean exit(){
+        Boolean option = false;
+        Boolean optionExit;
+        String answer;
+        Integer optionNumber;
+        do {
+            /**
+             * Exception control, try to execute the code.
+             */
+            try {
+                /**
+                 * It asks the user a question and saves its answer as a string in the answer attribute.
+                 */
+                answer = JOptionPane.showInputDialog("What do you want to do? \n1.Reset menu. \n2.Exit the game.");
+                /**
+                 * The answer becomes Intenger.
+                 */
+                optionNumber = Integer.valueOf(answer);
+                /**
+                 * Control flow switch, executes code based on user response.
+                 */
+                switch (optionNumber) {
+                    case 1:
+                        option = false;
+                        optionExit = false;
+                        break;
+                    case 2:
+                        option = true;
+                        optionExit = false;
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Wrong choice.");
+                        optionExit = true;
+                }
+                /**
+                 * Catches the exception and displays a message.
+                 */
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "You can only enter 1 or 2.");
+                optionExit = true;
+            }
+        }while (optionExit);
+        return option;
     }
 
 }
