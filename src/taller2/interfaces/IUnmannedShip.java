@@ -1,8 +1,12 @@
 package taller2.interfaces;
 
-import taller2.spaceVehicle.SpaceVehicle;
-
+/**
+ * It is an interface that refers to a type of Unmanned spaceship.
+ */
 public interface IUnmannedShip {
 
-    public String assignMission();
+    /**
+     * It is a method that refers to a functionality specific to Unmanned spaceship.
+     */
+    public void assignMission();
 }
